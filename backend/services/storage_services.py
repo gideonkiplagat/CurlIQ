@@ -1,31 +1,20 @@
-# Image handling
-import os
+
 import os
 from werkzeug.utils import secure_filename
-from ..utils.config import UPLOAD_FOLDER  # Updated import path
+from backend.utils.config import IMAGE_UPLOAD_FOLDER
+
+import os
 from werkzeug.utils import secure_filename
-from ..utils.config import UPLOAD_FOLDER
+from backend.utils.config import IMAGE_UPLOAD_FOLDER
 
 def save_uploaded_image(file):
-    if not os.path.exists(UPLOAD_FOLDER):
-        os.makedirs(UPLOAD_FOLDER)
-    
+    os.makedirs(IMAGE_UPLOAD_FOLDER, exist_ok=True)
     filename = secure_filename(file.filename)
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+    filepath = os.path.join(IMAGE_UPLOAD_FOLDER, filename)
     file.save(filepath)
-    
     return filepath
 
-
-
-
-#backend/utils/config.py
-# Configuration file for the application
-import os
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-UPLOAD_FOLDER = os.path.join(BASE_DIR, 'uploads')   
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-#backend/utils/image_utils.py
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg', 'webp'}
+           

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurlIQ - Find Your Perfect Haircut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CurlIQ</h1>
+            <p>Discover your ideal haircut based on your face shape</p>
+        </header>
+
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="imageUpload" accept="image/*" capture="camera">
+                <label for="imageUpload">
+                    <img src="assests/icons/upload-icon.png" alt="Upload">
+                    <span>Take or upload a photo</span>
+                </label>
+            </div>
+            <div class="preview" id="imagePreview"></div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <h2>Your Analysis</h2>
+            
+            <div class="result-card">
+                <h3>Face Shape</h3>
+                <p id="faceShapeResult">-</p>
+            </div>
+
+            <div class="hairstyles-grid" id="hairstylesGrid">
+                <!-- Recommended hairstyles will appear here -->
+            </div>
+
+            <div class="salons-list" id="salonsList">
+                <h3>Recommended Salons Near You</h3>
+                <!-- Salon recommendations will appear here -->
+            </div>
+        </div>
+
+        <button id="analyzeBtn" class="btn-primary">Analyze My Photo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
