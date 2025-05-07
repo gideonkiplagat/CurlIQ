@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         analyzeBtn.disabled = true;
-        analyzeBtn.textContent = 'Analyzing...';
+        analyzeBtn.textContent = 'Analyzing please wait...';
 
         try {
             const formData = new FormData();
@@ -106,6 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 { name: "Pixie Cut", image: "pixie.jpg", description: "Bold and stylish" }
             ],
             round: [
+                { name: "Angular Bob", image: "angular-bob.jpg", description: "Creates definition" },
+                { name: "Side Part", image: "side-part.jpg", description: "Lengthens face" }
+            ],
+            heart: [
                 { name: "Angular Bob", image: "angular-bob.jpg", description: "Creates definition" },
                 { name: "Side Part", image: "side-part.jpg", description: "Lengthens face" }
             ],
